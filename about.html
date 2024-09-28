@@ -5,35 +5,237 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Contractual Business Solutions</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Optional external CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Navigation bar styles */
+        header {
+            background-color: #1c1c1c;
+            padding: 02px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            justify-content: flex-end;
+            margin-right: -50px;
+        }
+
+        nav ul li {
+            margin-left: 05px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-family: Arial, sans-serif;
+        }
+
+        nav ul li a:hover {
+            background-color: #ffcc00;
+            color: #333;
+            border-radius: 5px;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        /* Ensure body content adjusts with fixed header */
+        body {
+            padding-top: 70px;
+        }
+
+        /* Experience Counter */
+        .counter-section {
+            padding: 50px 0;
+            background-color: #f9f9f9;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .counter-section h2 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .counter {
+            font-size: 60px;
+            font-weight: bold;
+            color: #ffcc00;
+            margin-bottom: 20px;
+        }
+
+        .counter.blinking {
+            animation: blinker 1.5s linear infinite;
+        }
+
+        .counter.pulsing {
+            animation: pulse 1.5s infinite;
+        }
+
+        .counter-description {
+            font-size: 20px;
+            color: #666;
+        }
+
+        .counter-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        .counter-item {
+            text-align: center;
+        }
+
+        /* About content */
+        .about-content {
+            padding: 50px;
+            text-align: center;
+            color: #333;
+        }
+
+        footer {
+            background: #1c1c1c;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        /* Blink Animation */
+        @keyframes blinker {
+            50% { opacity: 0; }
+        }
+
+        /* Pulse Animation */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
 </head>
 
 <body>
-    <header style="background-color: #1c1c1c; padding: 10px 0;">
+
+    <header>
         <div style="width: 90%; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
             <div class="logo">
-                <img src="images/logo.png" alt="Contractual Business Solutions Logo" style="height: 50px;">
+                <img src="logo.png" alt="Contractual Business Solutions Logo">
             </div>
             <nav>
-                <ul style="list-style: none; display: flex; padding: 0;">
-                    <li style="margin-left: 20px;"><a href="index.html" style="color: white; text-decoration: none;">Home</a></li>
-                    <li style="margin-left: 20px;"><a href="about.html" style="color: white; text-decoration: none;">About Us</a></li>
-                    <li style="margin-left: 20px;"><a href="services.html" style="color: white; text-decoration: none;">Services</a></li>
-                    <li style="margin-left: 20px;"><a href="projects.html" style="color: white; text-decoration: none;">Projects</a></li>
-                    <li style="margin-left: 20px;"><a href="contact.html" style="color: white; text-decoration: none;">Contact Us</a></li>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section style="padding: 50px; text-align: center;">
-        <h2>About Us</h2>
-        <p style="max-width: 800px; margin: 0 auto;">We are Contractual Business Solutions, committed to providing reliable solutions in high-slope netting and rock drilling. With years of experience, our dedicated team ensures safety, quality, and efficiency in every project.</p>
+    <section class="counter-section">
+        <h2>Our Achievements</h2>
+        <div class="counter-container">
+            <div class="counter-item">
+                <div class="counter" id="experience-counter">0</div>
+                <div class="counter-description">Years of Experience</div>
+            </div>
+            <div class="counter-item">
+                <div class="counter" id="completed-counter">0</div>
+                <div class="counter-description">Completed Projects</div>
+            </div>
+            <div class="counter-item">
+                <div class="counter" id="ongoing-counter">0</div>
+                <div class="counter-description">Ongoing Projects</div>
+            </div>
+        </div>
     </section>
 
-    <footer style="background: #1c1c1c; color: white; text-align: center; padding: 20px 0;">
-        <p style="margin: 0;">&copy; 2024 Contractual Business Solutions. All rights reserved. | Designed by [Your Name]</p>
-    </footer>
-</body>
+    <section class="about-content">
+        <h2>About Contractual Business Solutions</h2>
+        <p>We have been serving the industry for over two decades, specializing in high-slope netting and precision rock drilling services. Our commitment to safety, quality, and innovation has made us a trusted partner in numerous infrastructure projects.</p>
+    </section>
 
+    <footer>
+        <p>&copy; 2024 Contractual Business Solutions. All rights reserved. | Designed by [Your Name]</p>
+        <div>
+            <a href="https://www.instagram.com"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Script
+        let experienceCounter = document.getElementById('experience-counter');
+        let completedCounter = document.getElementById('completed-counter');
+        let ongoingCounter = document.getElementById('ongoing-counter');
+
+        let experienceCount = 0;
+        let completedCount = 0;
+        let ongoingCount = 0;
+
+        let experienceTarget = 20; // Years of Experience
+        let completedTarget = 10; // Completed Projects
+        let ongoingTarget = 4; // Ongoing Projects
+
+        let interval = setInterval(function () {
+            if (experienceCount < experienceTarget) {
+                experienceCount++;
+                experienceCounter.innerText = experienceCount;
+            }
+
+            if (completedCount < completedTarget) {
+                completedCount++;
+                completedCounter.innerText = completedCount;
+            }
+
+            if (ongoingCount < ongoingTarget) {
+                ongoingCount++;
+                ongoingCounter.innerText = ongoingCount;
+            }
+
+            if (experienceCount === experienceTarget) {
+                experienceCounter.classList.add('blinking');
+                experienceCounter.classList.add('pulsing');
+            }
+
+            if (completedCount === completedTarget) {
+                completedCounter.classList.add('blinking');
+                completedCounter.classList.add('pulsing');
+            }
+
+            if (ongoingCount === ongoingTarget) {
+                ongoingCounter.classList.add('blinking');
+                ongoingCounter.classList.add('pulsing');
+            }
+
+            if (experienceCount === experienceTarget && completedCount === completedTarget && ongoingCount === ongoingTarget) {
+                clearInterval(interval);
+            }
+        }, 100); // Speed of counting (milliseconds)
+    </script>
+
+</body>
 </html>
