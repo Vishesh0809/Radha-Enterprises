@@ -5,35 +5,201 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Contractual Business Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Navigation bar styles */
+        header {
+            background-color: #1c1c1c;
+            padding: 02px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            justify-content: flex-end;
+            margin-right: -50px;
+        }
+
+        nav ul li {
+            margin-left: 05px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-family: Arial, sans-serif;
+        }
+
+        nav ul li a:hover {
+            background-color: #ffcc00;
+            color: #333;
+            border-radius: 5px;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        /* Ensure body content adjusts with fixed header */
+        body {
+            padding-top: 70px;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .project-card {
+            position: relative;
+            display: inline-block;
+            margin: 20px;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 10px; /* Curved edges for card */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card img {
+            width: 400px; /* Increased size */
+            height: 250px; /* Increased size */
+            transition: transform 0.3s ease;
+            border-radius: 10px; /* Curved edges for image */
+        }
+
+        .project-card:hover img {
+            transform: scale(1.05); /* Slight zoom effect */
+        }
+
+        .project-info {
+            display: none;
+            position: absolute;
+            bottom: 0; /* Position at the bottom of the image */
+            left: 0; /* Align to the left */
+            width: 95%; /* Full width */
+            background-color: rgba(0, 0, 0, 0.6); /* Less transparency */
+            padding: 10px; /* Reduced padding */
+            border-radius: 10px; /* Curved edges for text box */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            z-index: 10;
+        }
+
+        .project-card:hover .project-info {
+            display: block; /* Show info on hover */
+        }
+
+        .project-info h3 {
+            font-size: 14px; /* Reduced font size */
+            color: white; /* White text */
+            margin: 0;
+        }
+
+        .project-info p {
+            font-size: 12px; /* Reduced font size */
+            color: white; /* White text */
+            margin: 5px 0 0 0; /* Reduced margin */
+        }
+
+        footer {
+            background: #1c1c1c;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body>
-    <header style="background-color: #1c1c1c; padding: 10px 0;">
+
+    <header>
         <div style="width: 90%; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
             <div class="logo">
-                <img src="images/logo.png" alt="Contractual Business Solutions Logo" style="height: 50px;">
+                <img src="logo.png" alt="Contractual Business Solutions Logo">
             </div>
             <nav>
-                <ul style="list-style: none; display: flex; padding: 0;">
-                    <li style="margin-left: 20px;"><a href="index.html" style="color: white; text-decoration: none;">Home</a></li>
-                    <li style="margin-left: 20px;"><a href="about.html" style="color: white; text-decoration: none;">About Us</a></li>
-                    <li style="margin-left: 20px;"><a href="services.html" style="color: white; text-decoration: none;">Services</a></li>
-                    <li style="margin-left: 20px;"><a href="projects.html" style="color: white; text-decoration: none;">Projects</a></li>
-                    <li style="margin-left: 20px;"><a href="contact.html" style="color: white; text-decoration: none;">Contact Us</a></li>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section style="padding: 50px; text-align: center;">
+    <section class="projects-section">
         <h2>Our Projects</h2>
-        <p style="max-width: 800px; margin: 0 auto;">Explore our completed projects that showcase our expertise in high-slope netting and rock drilling.</p>
-        <a href="index.html" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #ffcc00; color: #333; text-decoration: none;">Back to Home</a>
+        <div class="project-card">
+            <img src="Rock Fall.jpg" alt="Project 1">
+            <div class="project-info">
+                <h3>RVNL ECOR - Slope Protection</h3>
+                <p>In 2022, we undertook a significant project involving slope protection in a challenging high-depth
+                    cutting section along the Duburi-Baghupal block of the Angul-Sukinda new BG line. Under the Khurda
+                    Road Division of East Coast Railway in Odisha, this project was managed by Garware Technical Fibres
+                    Limited (GTFL) for Rail Vikas Nigam Limited (RVNL). Our team at Radha Enterprises successfully
+                    executed the installation of High-Performance Turf Reinforcement Mats (HPTRM), mechanically twisted
+                    hexagonal wire mesh netting, and self-drilling anchors, along with the placement of PVC pipes to
+                    ensure structural stability.</p>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="Net laying.jpg" alt="Project 2">
+            <div class="project-info">
+                <h3>RVNL ECOR - Rock Fall Work</h3>
+                <p>This project, completed in 2022, focused on rockfall mitigation and slope stabilization in the
+                    Sagadapata (SGDP) - Tangiriapal (TGRL) section of the Jaroli (JRLI) - Jakhapura (JKPR) Railway
+                    doubling project. Working under the main contractor GTFL for RVNL, our responsibilities included
+                    clearing vegetation, installing galvanized steel wire rope nets combined with double-twisted steel
+                    mesh, and fixing self-drilling anchors. These efforts were crucial in enhancing the safety and
+                    stability of the railway infrastructure within the Khurda Road Division.</p>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="Cement Grouting.jpg" alt="Project 3">
+            <div class="project-info">
+                <h3>RVNL ECOR - Rock Fall Netting Work</h3>
+                <p>In 2023, we executed side slope protection works in a highly collapsible area near Bridge 179 (ROB)
+                    of the Duburi-Baghupal block section, part of the Angul-Sukinda new BG Rail link project. This
+                    project, under the guidance of GTFL for RVNL, required our expertise in installing DT Mesh, HPTRM,
+                    self-drilling anchors, and PVC subsurface drainage systems. Our meticulous approach ensured the
+                    safety and longevity of this critical railway stretch under the Khurda Road Division.</p>
+            </div>
+        </div>
+        <!-- Add more projects as needed -->
     </section>
 
-    <footer style="background: #1c1c1c; color: white; text-align: center; padding: 20px 0;">
-        <p style="margin: 0;">&copy; 2024 Contractual Business Solutions. All rights reserved. | Designed by [Your Name]</p>
+    <footer>
+        <p>&copy; 2024 Contractual Business Solutions. All rights reserved. | Designed by [Your Name]</p>
+        <div>
+            <a href="https://www.instagram.com"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+        </div>
     </footer>
+
 </body>
 
 </html>
