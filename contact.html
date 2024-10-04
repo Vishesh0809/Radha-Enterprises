@@ -10,7 +10,7 @@
         /* Navigation bar */
         header {
             background-color: #1c1c1c;
-            padding: 05px 0;
+            padding: 02px 0;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: fixed;
             width: 100%;
@@ -131,7 +131,7 @@
             background-color: #ffcc00;
             color: #333;
             padding: 10px 20px;
-            font-size: 16px;
+            font-size: 16px;    
             border: none;
             cursor: pointer;
             transition: background-color 0.3s ease;
@@ -169,7 +169,7 @@
     <header>
         <div style="width: 90%; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
             <div class="logo">
-                <img src="Logo.png" alt="Contractual Business Solutions Logo">
+                <img src="logo.png" alt="Contractual Business Solutions Logo">
             </div>
             <nav>
                 <ul>
@@ -186,7 +186,8 @@
 
     <section class="contact-section">
         <h2>Contact Us</h2>
-        <form class="contact-form" action="submit.php" method="post">
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="69826c96-01e2-43f0-842e-03bccdaa2573">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <select name="country" required>
